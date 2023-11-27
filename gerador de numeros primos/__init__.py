@@ -16,9 +16,6 @@ if n > 114:
                 ne = 6
 print(f'{"1":>{ne}}', end=' ')
 for c1 in range(2, n+1):
-    if n > 38:
-        if c1 % nl == 0:
-            print()
     for c2 in range(2, c1+1):
         if c1/2 < c2:
             print(f'\033[1:31m{c1:>{ne}}\033[m', end=' ')
@@ -27,4 +24,6 @@ for c1 in range(2, n+1):
         if c1 % c2 == 0:
             print(f'{c1:>{ne}}', end=' ')
             break
+    if c1 % nl == 0:
+        print()
 print(f'\nTotal de primos:{primos}')
